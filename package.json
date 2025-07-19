@@ -5,7 +5,12 @@
   "description": "Mercado Libre iPhone 13 search & API sanity automation (MLA) using TypeScript + Playwright + Cucumber + Allure.",
   "type": "commonjs",
   "scripts": {
-    "test": "tests to be run"},
+    "test:ui": "cross-env ML_HEADLESS=false ML_SLOWMO=2000 npx cucumber-js src/features -p ui --tags '@ui'",
+    "test:api": "cross-env ML_HEADLESS=false ML_SLOWMO=2000 npx cucumber-js src/features -p api --tags '@api'",
+    "test:all": "npm run test:ui && npm run test:api",
+    "test:smoke": "cross-env ML_HEADLESS=false ML_SLOWMO=2000 npx cucumber-js src/features -p ui --tags '@smoke'",
+    "report": "allure generate reports/allure-results --clean -o reports/allure-report && allure open reports/allure-report"
+  },
   "dependencies": {
     "axios": "^1.7.0",
     "chai": "^5.1.0",
