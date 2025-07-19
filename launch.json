@@ -1,0 +1,14 @@
+{
+  "name": "UI @buy only",
+  "type": "node",
+  "request": "launch",
+  "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+  "args": [
+    "-p", "ui",
+    "--tags", "@buy"
+  ],
+  "cwd": "${workspaceFolder}",
+  "envFile": "${workspaceFolder}/.env",
+  "env": { "ML_HEADLESS": "false" },
+  "console": "integratedTerminal"
+}
